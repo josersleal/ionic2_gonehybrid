@@ -8,18 +8,18 @@ import 'rxjs/add/operator/map';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-@Injectable()
+    @Injectable()
 export class GitHubService {
-  
-  constructor(private http: Http) {
-    
-  }
 
-  getRepos(username){
+constructor(private http: Http) {
+
+}
+
+getRepos(username){
     var reposUrl = 'https://api.github.com/users/:' + username + '/repos';
     let repos = this.http.get(reposUrl);
-    return repos;
-  }
-  
+        return repos;
+}
+
 }
 
